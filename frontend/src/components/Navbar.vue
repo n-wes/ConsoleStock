@@ -35,7 +35,6 @@ export default {
 }
 
 .nav__links .router {
-  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #edf0f1;
   text-decoration: none;

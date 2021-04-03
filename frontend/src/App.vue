@@ -1,6 +1,8 @@
 <template>
-  <Navbar/>
-  <router-view />
+  <div class="app-container">
+    <Navbar/>
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -15,13 +17,19 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 #app {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  font-family: 'Bungee', sans-serif;
 }
 
-body {
+html,
+body,
+#app,
+.app-container {
   margin: 0;
+  height: 100%;
 }
 </style>
