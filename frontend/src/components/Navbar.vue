@@ -3,9 +3,8 @@
     <a class="logo" href="/"><img src="../assets/logo.svg" alt="logo"></a>
     <nav>
       <ul class="nav__links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/products">Products</a></li>
-        <li><a href="/about">About</a></li>
+        <li><router-link class="router" to="/">Home</router-link></li>
+        <li><router-link class="router" to="/About">About</router-link></li>
       </ul>
     </nav>
   </header>
@@ -35,7 +34,7 @@ export default {
   max-height: 60px;
 }
 
-.nav__links a {
+.nav__links .router {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #edf0f1;
@@ -51,11 +50,11 @@ export default {
   padding: 0px 20px;
 }
 
-.nav__links li a {
+.nav__links li .router {
   transition: color 0.3s ease 0s;
 }
 
-.nav__links li a:hover {
+.nav__links li .router:hover {
   color: #0088a9;
 }
 
@@ -89,15 +88,15 @@ export default {
   justify-content: center;
 }
 
-.overlay a {
+.overlay .router {
   padding: 15px;
   font-size: 36px;
   display: block;
   transition: color 0.3s ease 0s;
 }
 
-.overlay a:hover,
-.overlay a:focus {
+.overlay .router:hover,
+.overlay .router:focus {
   color: #0088a9;
 }
 .overlay .close {
@@ -109,7 +108,7 @@ export default {
 }
 
 @media screen and (max-height: 450px) {
-  .overlay a {
+  .overlay .router {
     font-size: 20px;
   }
   .overlay .close {
