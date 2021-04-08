@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-      <form>
-        <div>
+      <form class="filters">
+        <div class="price-filter">
           <label for="price">Price</label>
           <input type="range" min="1" max="100" value="50" class="slider" id="price" name="price">
         </div>
-        <div>
+        <div class="storage-filter">
           <label for="storage">Price</label>
           <input type="range" min="1" max="100" value="50" class="slider" id="storage" name="storage">
         </div>
-        <div>
+        <div class="condition-filter">
           <label for="condition">Condition</label>
           <select name="condition" id="condition">
             <option value="new">New</option>
@@ -49,6 +49,12 @@ export default {
     background-color: #eff1f1;
     height: 100%;
     padding-top: 100px;
+  }
+
+  .filters {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
   }
 
   .box{
