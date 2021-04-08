@@ -4,7 +4,8 @@
     <nav>
       <ul class="nav__links">
         <li><router-link class="router" to="/">Home</router-link></li>
-        <li><router-link class="router" to="/About">About</router-link></li>
+        <li><router-link class="router" to="/listing">Products</router-link></li>
+        <li><router-link class="router" to="/about">About</router-link></li>
       </ul>
     </nav>
   </header>

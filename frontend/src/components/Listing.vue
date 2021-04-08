@@ -1,14 +1,30 @@
-
 <template>
   <div class="container">
-    <div class="box">
-      <span class="price">Price</span>
-      <span class="storage">Storage</span>
-      <span class="retailers">Retailers</span>
-      <div class="slidecontainer">
-    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-      </div>
-</div>
+      <form>
+        <div>
+          <label for="price">Price</label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="price" name="price">
+        </div>
+        <div>
+          <label for="storage">Price</label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="storage" name="storage">
+        </div>
+        <div>
+          <label for="condition">Condition</label>
+          <select name="condition" id="condition">
+            <option value="new">New</option>
+            <option value="used">Used</option>
+          </select>
+          <label for="color">Color</label>
+          <select name="color" id="color">
+            <option value="red">Red</option>
+            <option value="black">Black</option>
+            <option value="blue">Blue</option>
+            <option value="white">White</option>
+          </select>
+        </div>
+      </form>
+  </div>
 </template>
 
 <script>
@@ -75,3 +91,5 @@ export default {
   background: black; 
   cursor: pointer; 
 }
+
+</style>
