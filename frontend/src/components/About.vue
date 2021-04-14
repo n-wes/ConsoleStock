@@ -1,19 +1,27 @@
 <template>
+<div class="cont">
   <div class="top">
     <div class="title">
-    <h1>About Console Stock</h1>
+    <h1>About ConsoleStock</h1>
     </div>
     <div class="description">
       <p>
-        Console Stock was created for our Software Engineering Principles course
-        at SMU. Through working on the project, we discovered that Console Stock
+        ConsoleStock was created for our Software Engineering Principles course
+        at SMU. Through working on the project, we discovered that ConsoleStock
         was going to be a hit among video game enthusiasts. We launched right after
-        the 2020 consoles came out, so finding these speicifc consoles in stock
-        was a difficult task. Using Amazon, Ebay, BestBuy, Newegg, data is collected
+        the 2020 next-gen consoles came out, so finding these specific consoles in stock
+        was a difficult task. Using Amazon, Ebay, BestBuy, and Newegg, data is collected
         from these sites and shown here. We chose these websites to start, and have
-        plans to add more in the future. Thank you for choosing Console Stock!
+        plans to add more sites in the future.
+      </p>
+      <p>
+        Thank you for choosing Console Stock!
       </p>
     </div>
+    <div class="meet">
+      <h2>Meet our Developers</h2>
+    </div>
+  </div>
 
   <div class="bottom">
     <div class="container">
@@ -24,7 +32,7 @@
 
     <div class="container2">
         <div class="overlay">
-          <span>Garret Moore</span>
+          <span>Garrett Moore</span>
         </div>
     </div>
 
@@ -40,10 +48,11 @@
     </div>
     <div class="container5">
         <div class="overlay">
-          <span>Nathan Wesely</span>
+          <span>Nathan Wesley</span>
         </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -53,10 +62,23 @@ export default {
 </script>
 
 <style scoped>
+
+  h1{
+    margin: 0%;
+  }
+  p{
+    margin: 0%;
+  }
+
+  .cont{
+    background-color: #eff1f1;
+    padding-bottom: 200px;
+    padding-top: 10px;
+  }
+
   .top {
     background-color: #eff1f1;
     height: 100%;
-    padding-top: 100px;
   }
 
   .title{
@@ -66,11 +88,19 @@ export default {
   }
   .description{
     font-size: 18px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 190px;
+    padding-right: 190px;
+    text-align: center;
+    margin: 0px;
+    padding-top: 0px;
+  }
+  .meet{
+    text-align: center;
+    padding-top: 30px;
   }
 
   .bottom{
+    background-color: #eff1f1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +111,7 @@ export default {
     margin: 20px;
     width: 200px;
     height: 200px;
-    background: url('assets/elliot.png');
+    background: url("../assets/elliot.png");
     background-size: cover;
     background-position: center;
     -webkit-border-radius: 50%;
@@ -95,7 +125,7 @@ export default {
     margin: 20px;
     width: 200px;
     height: 200px;
-    background: url('assets/garret.png');
+    background: url("../assets/garret.png");
     background-size: cover;
     background-position: center;
     -webkit-border-radius: 50%;
@@ -109,7 +139,7 @@ export default {
     margin: 20px;
     width: 200px;
     height: 200px;
-    background: url('assets/alex.png');
+    background: url("../assets/alex.png");
     background-size: cover;
     background-position: center;
     -webkit-border-radius: 50%;
@@ -123,7 +153,7 @@ export default {
     margin: 20px;
     width: 200px;
     height: 200px;
-    background: url('assets/anthony.png');
+    background: url("../assets/anthony.png");
     background-size: cover;
     background-position: center;
     -webkit-border-radius: 50%;
@@ -137,7 +167,7 @@ export default {
     margin: 20px;
     width: 200px;
     height: 200px;
-    background: url('assets/nathan.png');
+    background: url("../assets/nathan.png");
     background-size: cover;
     background-position: center;
     -webkit-border-radius: 50%;
@@ -269,7 +299,7 @@ export default {
     margin: auto;
     width: 200px;
     height: 50px;
-    top: 125px;
+    top: 90px;
   }
 
   .container:hover .overlay span {
@@ -292,3 +322,4 @@ export default {
     opacity: 1;
     transition: 0.8s ease-in-out 0s;
   }
+</style>
