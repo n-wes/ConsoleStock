@@ -15,7 +15,7 @@
         plans to add more sites in the future.
       </p>
       <p>
-        Thank you for choosing Console Stock!
+        Thank you for choosing ConsoleStock!
       </p>
     </div>
     <div class="meet">
