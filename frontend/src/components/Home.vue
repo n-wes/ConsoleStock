@@ -5,9 +5,9 @@
     </div>
     <div class="bottom">
       <ul class="console__links">
-        <li id="ps5"><a href=""><img src="../assets/ps5.svg" alt="ps5"></a></li>
-        <li id="xbox"><a href=""><img src="../assets/xbox.png" alt="xbox"></a></li>
-        <li id="switch"><a href=""><img src="../assets/switch.svg" alt="switch"></a></li>
+        <li id="ps5"><router-link class="router" to="/playstation"><img src="../assets/ps5.svg" alt="ps5"></router-link></li>
+        <li id="xbox"><router-link class="router" to="/xbox"><img src="../assets/xbox.png" alt="xbox"></router-link></li>
+        <li id="switch"><router-link class="router" to="/nintendo"><img src="../assets/switch.svg" alt="switch"></router-link></li>
       </ul>
     </div>
   </div>
