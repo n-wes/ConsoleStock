@@ -6,14 +6,16 @@
         <th>Brand</th>
         <th>Condition</th>
         <th>Seller</th>
+        <th>Price</th>
       </tr>
     </thead>
     <tbody>
       <tr :key="listing" v-for="listing in listings">
-        <td>{{listing.type}}</td>
+        <td><a :href="listing.url">{{listing.type}}</a></td>
         <td>{{listing.brand}}</td>
         <td>{{listing.condition}}</td>
         <td>{{listing.seller}}</td>
+        <td>{{listing.price ? listing.price : 'Unavailable'}}</td>
       </tr>
     </tbody>
   </table>
@@ -29,5 +31,13 @@ export default {
 </script>
 
 <style scoped>
+  a {
+    color:blue;
+    text-decoration: none;
+  }
 
+  th, td {
+    padding: 10px 30px;
+    text-align: left;
+  }
 </style>
