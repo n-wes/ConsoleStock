@@ -131,10 +131,6 @@ app.get('/listings', (req, res) => {
 				if (active && !listing.active) {
 					return false;
 				}
-
-				if (!active && listing.active) {
-					return false;
-				}
 	
 				if (maxPrice != -1 && listing.price > maxPrice) {
 					return false;
