@@ -137,7 +137,7 @@ const listingScraper = {
 			return element.innerText
 		}).catch((err) => {});
 		if (price){
-			return price.substring(1).replace(/\D/g,'');
+			return price.substring(1).replace(/[^\d.]/g,'');
 		}
 		else{
 			return "0.0"
