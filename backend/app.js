@@ -1,5 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
+const cors = require('cors')
+
 const connection = mysql.createConnection({
 	host: "localhost",
 	user: "consolestock",
@@ -9,6 +11,8 @@ const connection = mysql.createConnection({
 
 const app = express();
 const port = 8000;
+
+app.use(cors())
 
 class ConsoleListing {
 	constructor(id, brand, type, condition, seller, url, active, date, price) {
