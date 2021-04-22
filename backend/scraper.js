@@ -139,7 +139,7 @@ const listingScraper = {
 			return price.substring(1).replace(/[^\d.]/g,'');
 		}
 		else{
-			return "0.0"
+			return null
 		}
 	},
 

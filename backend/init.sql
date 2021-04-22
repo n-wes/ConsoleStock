@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `consolestock`.`console_listings` (
   `console_listing_url` VARCHAR(500) NOT NULL,
   `console_listing_active` TINYINT(1) UNSIGNED NOT NULL DEFAULT 1,
   `console_listing_date` DATE NOT NULL,
-  `console_listing_price` FLOAT UNSIGNED NOT NULL,
+  `console_listing_price` FLOAT UNSIGNED,
   PRIMARY KEY (`console_listing_id`),
   INDEX `console_listing_url_UNIQUE` (`console_listing_url` ASC) VISIBLE,
   INDEX `console_listing_type_link_idx` (`console_type_id` ASC) VISIBLE,
