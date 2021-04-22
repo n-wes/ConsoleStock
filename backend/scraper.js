@@ -83,7 +83,7 @@ class ConsoleListing {
 const listingScraper = {
 	async init(){
 		if(!this.page){
-			this.browser = await puppeteer.launch({headless: false});
+			this.browser = await puppeteer.launch();
 			let pages = await this.browser.pages();
 			this.page = pages[0];
 			await this.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3419.0 Safari/537.36');
