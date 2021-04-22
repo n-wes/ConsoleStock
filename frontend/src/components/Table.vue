@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       <tr :key="listing" v-for="listing in listings">
-        <td><a :href="listing.url">{{listing.type}}</a></td>
+        <td><a :href="listing.url" target="_blank" rel="noopener noreferrer">{{listing.type}}</a></td>
         <td>{{listing.brand}}</td>
         <td>{{listing.condition}}</td>
         <td>{{listing.seller}}</td>
@@ -37,7 +37,8 @@ export default {
   }
 
   th, td {
-    padding: 10px 30px;
+    padding: 1vh 3vw;
     text-align: left;
+    font-size: 1vw;
   }
 </style>

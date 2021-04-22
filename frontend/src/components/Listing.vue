@@ -61,7 +61,7 @@
             <input type="text" id="maxprice" name="maxprice" v-model="maxprice">
           </div>
         </div>
-        <input type="submit" value="Save Filters" name="submit" class="submitbtn">
+        <input type="submit" value="SAVE FILTERS" name="submit" class="submitbtn btn btn-success btn-bolded">
     </form>
     <Table :listings="listings"/>
   </div>
@@ -132,7 +132,6 @@ export default {
     }
   },
   created() {
-    console.log('hi')
     axios.get('http://localhost:8000/listings')
       .then(res => this.listings = res.data.listings)
       .catch(err => {
@@ -154,6 +153,109 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
+  }
+  
+  .btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0;
+
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+  
+  .btn:focus, .btn:active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+  
+  .btn:hover, .btn:focus {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  }
+  
+  .btn-bolded {
+    font-weight: bold;
+  }
+
+/* default
+---------------------------- */
+  .btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+  }
+  
+  .btn-default:focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #8c8c8c;
+  }
+  
+  .btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
+  
+  .btn-default:active {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:focus {
+    color: #fff;
+    background-color: #228c3a;
+    border-color: #228c3a;
+  }
+  
+  .btn-success:hover {
+    color: #fff;
+    background-color: #228c3a;
+    border-color: #228c3a;
+  }
+  
+  .btn-success:active {
+    color: #fff;
+    background-color: #228c3a;
+    border-color: #228c3a;
+  }
+  
+  .submitbtn {
+    height: 20%;
+    margin: auto auto;
+    margin-right: 1.5vw;
   }
 
   .filters {
@@ -161,23 +263,29 @@ export default {
     border-radius: 20px;
     display: flex;
     flex-direction: row;
-    width: 60%;
-    margin-bottom: 50px;
+    width: 65%;
+    margin-bottom: 5vh;
   }
+  
+  @media screen and (max-width: 1300px) {
+    .filters {
+      flex-direction: column;
+    }
+    .submitbtn {
+      margin-bottom: 1vh;
+    }
+  }
+  
   
   .filter {
     display: flex;
     flex-direction: column;
-    margin: 5px 20px;
+    margin: 1vh 1.5vw;
   }
 
   .filter > div {
-    margin-left: 20px;
+    margin-left: 1vw;
   }
-   .submitbtn {
-     height: 20%;
-     margin: auto auto;
-   }
 
   .box{
     background-color: #eff1f1;
