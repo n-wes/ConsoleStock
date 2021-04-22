@@ -40,9 +40,9 @@ const NS = new Map([
 
 const consoles = new Map([
 	["PS5", PS5],
-	//["PlayStation 5 Digital Edition", PS5DE],
+	["PS5DE", PS5DE],
 	["Series X", XSX],
-	//["Xbox Series S", XSS],
+	["Series S", XSS],
 	["Switch", NS]
 ])
 
@@ -117,7 +117,6 @@ const listingScraper = {
 		const selectors = uri.split(' ').splice(1);
 		await this.page.goto(url);
 		for (let selector of selectors){
-			console.log(selector);
 			await this.page.waitForSelector(selector, {visible: true});
 			await this.page.click(selector);
 		}
@@ -204,7 +203,7 @@ async function updateListings(){
 	connection.query('INSERT INTO console_brands (console_brand_name) VALUES ("Xbox"), ("Nintendo"), ("PlayStation");');
 	connection.query('INSERT INTO console_conditions (console_condition_name) VALUES ("New"), ("Renewed"), ("Used");');
 	connection.query('INSERT INTO console_sellers (console_seller_name) VALUES ("Amazon"), ("Newegg"), ("ebay"), ("BestBuy");');
-	connection.query('INSERT INTO console_types (console_type_name, console_brand_id, console_type_release) VALUES ("Series X", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "Xbox"), CURDATE()), ("Switch", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "Nintendo"), CURDATE()), ("PS5", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "PlayStation"), CURDATE());');
+	connection.query('INSERT INTO console_types (console_type_name, console_brand_id, console_type_release) VALUES ("Series X", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "Xbox"), CURDATE()), ("Switch", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "Nintendo"), CURDATE()), ("PS5", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "PlayStation"), CURDATE()), ("Series S", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "Xbox"), CURDATE()), ("PS5DE", (SELECT console_brand_id FROM console_brands WHERE console_brand_name = "PlayStation"), CURDATE());');
 
 	try{
 		await addListings();

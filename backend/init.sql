@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `consolestock`.`console_listings` (
   `console_listing_date` DATE NOT NULL,
   `console_listing_price` FLOAT UNSIGNED NOT NULL,
   PRIMARY KEY (`console_listing_id`),
-  UNIQUE INDEX `console_listing_url_UNIQUE` (`console_listing_url` ASC) VISIBLE,
+  INDEX `console_listing_url_UNIQUE` (`console_listing_url` ASC) VISIBLE,
   INDEX `console_listing_type_link_idx` (`console_type_id` ASC) VISIBLE,
   INDEX `console_listing_condition_link_idx` (`console_condition_id` ASC) VISIBLE,
   INDEX `console_listing_seller_link_idx` (`console_seller_id` ASC) VISIBLE,
