@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+    db:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password --init-file /data/application/init.sql
+        volumes:
+            - ./backend/init.sql:/data/application/init.sql
+        restart: always
+        environment:
+            MYSQL_ROOT_USER: root
+            MYSQL_ROOT_PASSWORD: toor
+            MYSQL_DATABASE: consolestock
+            MYSQL_USER: consolestock
+            MYSQL_PASSWORD: cs4345
+        ports:
+            - 3306:3306
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - 8000:8000
+        volumes:
+            - ./backend:/usr/src/app/backend
+            - /usr/src/app/backend/node_modules
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - 8080:8080
+        volumes:
+            - ./frontend:/usr/src/app/frontend
+            - /usr/src/app/frontend/node_modules
