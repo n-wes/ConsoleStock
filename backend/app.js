@@ -2,8 +2,9 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors')
 
-const connection = mysql.createConnection({
-	host: "localhost",
+const connection = mysql.createPool({
+	connectionLimit: 10,
+	host: "db",
 	user: "consolestock",
 	password: "cs4345",
 	database: "consolestock"
@@ -34,11 +35,6 @@ function fetchListings() {
 
 function fetchListingsInner(resolve, reject) {
 	let listings = [];
-
-	if (!connection || connection.state != 'authenticated') {
-		reject();
-		return;
-	}
 
 	connection.query("SELECT console_listing_id, console_brand_name, console_type_name, console_condition_name, console_seller_name, console_listing_url, console_listing_active, console_listing_date, console_listing_price FROM console_listings AS l INNER JOIN console_types AS t ON t.console_type_id=l.console_type_id INNER JOIN console_brands AS b ON b.console_brand_id=t.console_brand_id INNER JOIN console_conditions AS c ON c.console_condition_id=l.console_condition_id INNER JOIN console_sellers AS s ON s.console_seller_id=l.console_seller_id;", (error, results, fields) => {
 		if (error) {
@@ -142,4 +138,4 @@ app.get('/listings', (req, res) => {
 	});
 });
 
-app.listen(port, () => connection.connect());
+app.listen(port, () => {});

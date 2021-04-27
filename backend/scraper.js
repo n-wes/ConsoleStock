@@ -1,8 +1,9 @@
 const puppeteer = require('puppeteer');
 const cron = require('node-cron');
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-	host: "localhost",
+const connection = mysql.createPool({
+	connectionLimit: 3,
+	host: "db",
 	user: "consolestock",
 	password: "cs4345",
 	database: "consolestock"
@@ -83,7 +84,7 @@ class ConsoleListing {
 const listingScraper = {
 	async init(){
 		if(!this.page){
-			this.browser = await puppeteer.launch();
+			this.browser = await puppeteer.launch({args: ['--no-sandbox']});
 			let pages = await this.browser.pages();
 			this.page = pages[0];
 			await this.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3419.0 Safari/537.36');
@@ -156,7 +157,7 @@ const listingScraper = {
 
 function pullExistingListings(resolve, reject) {
 	let listings = [];
-	if (!connection || connection.state != 'authenticated') {
+	if (!connection) {
 		reject();
 		return;
 	}
