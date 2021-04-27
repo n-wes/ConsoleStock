@@ -2,10 +2,10 @@
 
 Developers:
 
-Anthony Wang
-Elliott Boesch
-Alex Meech
-Nathan Wesley
+Anthony Wang,
+Elliott Boesch,
+Alex Meech,
+Nathan Wesley,
 
 ### Dependencies
 Docker  
@@ -18,6 +18,9 @@ In the root project directory:
 ### Startup Instructions
 In the root project directory:  
 > docker-compose up  
+
+### Access Instructions
+In your web browser, navigate to http://localhost:8080/
 
 ### Shutdown Instructions
 In the root project directory:  
