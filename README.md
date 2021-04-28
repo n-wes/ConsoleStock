@@ -5,7 +5,8 @@ Developers:
 Anthony Wang,
 Elliot Boesch,
 Alex Meech,
-Nathan Wesley
+Nathan Wesley,
+Garrett Moore
 
 ### Dependencies
 Docker  
