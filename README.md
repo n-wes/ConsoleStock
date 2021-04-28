@@ -3,7 +3,7 @@
 Developers:
 
 Anthony Wang,
-Elliott Boesch,
+Elliot Boesch,
 Alex Meech,
 Nathan Wesley
 
